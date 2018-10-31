@@ -67,6 +67,12 @@
       font-weight: 500;
     }
 
+    #slot-1:checked ~ #tab-1,
+    #slot-2:checked ~ #tab-2,
+    #slot-3:checked ~ #tab-3 {
+      background-color: #B5CEE8;
+    }
+
     .question {
       box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
       background-color: #fff;
@@ -91,20 +97,26 @@
       color: #0D3B66;
       white-space: pre-line;
     }
+
+    @media only screen and (max-width: 767px) {
+      .tab {
+        border-radius: 10px;
+      }
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-9">
-        <div class="tabs row justify-content-between">
-          <label for="slot-1" class="tab col-3 text-center">場次一</label>
-          <label for="slot-2" class="tab col-3 text-center">場次二</label>
-          <label for="slot-3" class="tab col-3 text-center">場次三</label>
+      <div class="col-12 col-md-9">
+        <div class="tabs row justify-content-around">
           <input type="radio" id="slot-1" value="1" name="slot" checked>
           <input type="radio" id="slot-2" value="2" name="slot">
           <input type="radio" id="slot-3" value="3" name="slot">
+          <label for="slot-1" id="tab-1" class="tab col-3 text-center">場次一</label>
+          <label for="slot-2" id="tab-2" class="tab col-3 text-center">場次二</label>
+          <label for="slot-3" id="tab-3" class="tab col-3 text-center">場次三</label>
         </div>
         <div class="questions row justify-content-center"></div>
       </div>
